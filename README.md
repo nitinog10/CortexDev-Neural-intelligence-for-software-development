@@ -20,10 +20,10 @@ It’s built to **think like a developer** and output **code‑only responses** 
 ## 📸 Screenshots
 
 **Notebook + Gradio UI**
-![image2](image2)
+![Notebook + Gradio UI](screenshots/gradio_ui.svg)
 
 **Example generation**
-![image1](image1)
+![Example generation](screenshots/example_generation.svg)
 
 ---
 

@@ -1,115 +1,94 @@
-# CortexDev-Neural-intelligence-for-software-development
-<p align="center">
-  <b>An AI model that thinks like a developer and outputs clean, executable code.</b>
-</p>
+# CortexDev — Neural Intelligence for Software Development
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Model-CodeGen--350M-blue"/>
-  <img src="https://img.shields.io/badge/Fine--Tuning-LoRA-green"/>
-  <img src="https://img.shields.io/badge/Platform-Google%20Colab-orange"/>
-  <img src="https://img.shields.io/badge/Type-Code%20Generation-purple"/>
-</p>
+A focused, fine‑tuned code generation model designed to produce clean, executable Python code with minimal overhead.
 
 ---
 
-## 🚀 What is Cortex Dev?
+## ✨ What is CortexDev?
 
-**Cortex Dev** is a personalized code generation model built by fine-tuning a code-focused LLM using **LoRA (Low-Rank Adaptation)**.
+CortexDev is a lightweight, fine‑tuned model based on **Salesforce CodeGen‑350M** using **LoRA**.  
+It’s built to **think like a developer** and output **code‑only responses** with consistent structure and style.
 
-Unlike prompt-based assistants, Cortex Dev is an actual trained model whose weights are modified to generate **professional, code-only outputs by default**.
-
-✅ Fine-tuned model  
-✅ Code-only generation  
-✅ Consistent output  
-✅ Colab-safe  
-
----
-
-## ❌ Not a Chatbot  
-- ❌ Not prompt engineering  
-- ❌ Not a chat assistant  
-
-## ✅ It is  
-- ✅ A real fine-tuned code generation model
+**Key highlights**
+- ✅ Fine‑tuned model (not prompt engineering)
+- ✅ Code‑only output by default
+- ✅ Optimized for Colab & low‑VRAM environments
+- ✅ Reproducible, professional fine‑tuning workflow
 
 ---
 
-## 🎯 Why Cortex Dev Exists
+## 📸 Screenshots
 
-| Problem | Traditional Approach | Cortex Dev |
-|--------|----------------------|------------|
-| Prompt dependency | Long system prompts | Built-in behavior |
-| Memory limits | Large models crash Colab | Lightweight & safe |
-| Extra explanations | Mixed outputs | Code-only |
-| Inconsistent style | Varies per prompt | Consistent coding style |
+**Notebook + Gradio UI**
+![image2](image2)
+
+**Example generation**
+![image1](image1)
 
 ---
 
-## 🧠 Core Philosophy
+## 🧠 Why CortexDev?
 
-Training from scratch is impractical in constrained environments.  
-Fine-tuning a small, code-specialized LLM is the correct and professional approach.
+Traditional prompt‑based assistants are inconsistent and verbose.  
+CortexDev embeds the behavior directly into model weights so you get:
 
-Cortex Dev follows **industry-standard fine-tuning practices** to remain:
-
-✅ Efficient  
-✅ Reproducible  
-✅ Colab-safe  
+| Challenge | Traditional Prompting | CortexDev |
+|----------|------------------------|-----------|
+| Prompt dependency | Requires long system prompts | Built‑in behavior |
+| Output consistency | Varies by prompt | Consistent code style |
+| Extra explanations | Mixed output | Code‑only |
+| Colab safety | Heavy models | Lightweight |
 
 ---
 
 ## 🏗️ Architecture Overview
 
 ```
-Base Code LLM (CodeGen-350M)
+Base Code LLM (CodeGen‑350M)
         ↓
 Frozen Base Weights
         ↓
 LoRA Adapter Layers (Trainable)
         ↓
-Custom Code Dataset
+Custom Python Instruction Dataset
         ↓
-Cortex Dev – Code Generation Model
+CortexDev — Code Generation Model
 ```
 
 ---
 
 ## 🤖 Base Model
 
-**Salesforce CodeGen-350M**
+**Salesforce CodeGen‑350M**
+- Pretrained on source code
+- Strong syntax understanding
+- Compact enough for Colab
+- Ideal for LoRA fine‑tuning
 
-**Why this model?**
-- Pretrained specifically on source code  
-- Strong syntax understanding  
-- Small enough for Google Colab  
-- Ideal for LoRA fine-tuning  
-
-**Parameters:** ~350M  
-**VRAM Usage:** ~6–8 GB (fp16 + LoRA)
+**Approx. VRAM usage:** 6–8 GB (fp16 + LoRA)
 
 ---
 
-## 🧩 Fine-Tuning Strategy
+## 🧩 Fine‑Tuning Strategy
 
-**Technique:** LoRA (Parameter-Efficient Fine-Tuning)
+**Technique:** LoRA (Parameter‑Efficient Fine‑Tuning)
 
-✅ Base model remains frozen  
-✅ Only adapter layers trained  
-✅ Minimal memory usage  
+✅ Frozen base weights  
+✅ Trainable adapter layers  
+✅ Lower memory usage  
 ✅ Faster convergence  
-✅ No RAM overflow  
 
 | Method | Used |
 |--------|------|
 | Training from scratch | ❌ |
-| Full fine-tuning | ❌ |
+| Full fine‑tuning | ❌ |
 | LoRA / PEFT | ✅ |
 
 ---
 
 ## 📦 Dataset Format
 
-Each example follows a **prompt → completion** structure.
+Each sample is structured as **prompt → completion**:
 
 ```json
 {
@@ -118,13 +97,9 @@ Each example follows a **prompt → completion** structure.
 }
 ```
 
-✔ Clean  
-✔ Minimal  
-✔ Code-only  
-
 ---
 
-## ⚙️ Training Configuration (Colab-Safe)
+## ⚙️ Training Configuration (Colab‑Safe)
 
 | Parameter | Value |
 |----------|-------|
@@ -133,22 +108,18 @@ Each example follows a **prompt → completion** structure.
 | Precision | fp16 |
 | Max Length | 512 |
 | Optimizer | AdamW |
-| Fine-Tuning | LoRA |
-
-✅ No RAM overflow  
-✅ No session crash  
-✅ Runs entirely on Google Colab  
+| Fine‑Tuning | LoRA |
 
 ---
 
 ## 🧪 Inference Example
 
-**Input**  
+**Input**
 ```
 Write a Python function to reverse a string
 ```
 
-**Output**  
+**Output**
 ```
 def reverse_string(s):
     return s[::-1]
@@ -156,29 +127,18 @@ def reverse_string(s):
 
 No explanations.  
 No markdown.  
-Just working code.  
-
----
-
-## 🔍 Prompt vs Fine-Tuned Model
-
-| Feature | Prompt Agent | Cortex Dev |
-|---------|--------------|------------|
-| Weight updates | ❌ | ✅ |
-| Persistent behavior | ❌ | ✅ |
-| Needs system prompt | ✅ | ❌ |
-| Code-only output | ❌ | ✅ |
-| Colab-safe | ✅ | ✅ |
+Just executable code.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python  
-- HuggingFace Transformers  
-- PEFT (LoRA)  
-- PyTorch  
-- Google Colab  
+- Python
+- HuggingFace Transformers
+- PEFT (LoRA)
+- PyTorch
+- Google Colab
+- Gradio
 
 ---
 
@@ -188,7 +148,7 @@ Just working code.
 ✅ Hackathon accelerators  
 ✅ Educational code generators  
 ✅ Backend scaffolding tools  
-✅ Domain-specific code models  
+✅ Domain‑specific code models
 
 ---
 
@@ -198,7 +158,7 @@ MIT License — free to use, modify, and extend.
 
 ---
 
-## ✨ Final Note
+## ✅ Final Note
 
-**Cortex Dev is not an assistant.**  
-It is a trained code generation model designed to think and output like a developer.
+**CortexDev is not a chatbot.**  
+It is a trained model that outputs code like a focused developer.

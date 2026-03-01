@@ -152,12 +152,6 @@ Just executable code.
 
 ---
 
-## 📄 License
-
-MIT License — free to use, modify, and extend.
-
----
-
 ## ✅ Final Note
 
 **CortexDev is not a chatbot.**  

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="460" viewBox="0 0 820 460">
+  <!-- Background -->
+  <rect width="820" height="460" rx="10" fill="#1e1e2e"/>
+
+  <!-- Title bar -->
+  <rect width="820" height="48" rx="10" fill="#2a2a3e"/>
+  <rect y="38" width="820" height="10" fill="#2a2a3e"/>
+  <circle cx="24" cy="24" r="7" fill="#ff5f57"/>
+  <circle cx="46" cy="24" r="7" fill="#febc2e"/>
+  <circle cx="68" cy="24" r="7" fill="#28c840"/>
+  <text x="410" y="30" font-family="monospace" font-size="14" fill="#cdd6f4" text-anchor="middle" font-weight="bold">CortexDev — Code Generation UI (Gradio)</text>
+
+  <!-- Input section label -->
+  <text x="30" y="80" font-family="monospace" font-size="13" fill="#89b4fa" font-weight="bold">Prompt</text>
+
+  <!-- Input box -->
+  <rect x="20" y="88" width="780" height="80" rx="6" fill="#313244" stroke="#45475a" stroke-width="1"/>
+  <text x="36" y="112" font-family="monospace" font-size="13" fill="#cdd6f4">Write a Python function to reverse a string</text>
+  <rect x="32" y="108" width="2" height="16" fill="#89b4fa" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Sliders row -->
+  <text x="30" y="198" font-family="monospace" font-size="12" fill="#a6adc8">Temperature</text>
+  <rect x="140" y="188" width="160" height="6" rx="3" fill="#45475a"/>
+  <rect x="140" y="188" width="80" height="6" rx="3" fill="#89b4fa"/>
+  <circle cx="220" cy="191" r="8" fill="#89b4fa"/>
+  <text x="308" y="198" font-family="monospace" font-size="12" fill="#cdd6f4">0.5</text>
+
+  <text x="360" y="198" font-family="monospace" font-size="12" fill="#a6adc8">Top-p</text>
+  <rect x="418" y="188" width="160" height="6" rx="3" fill="#45475a"/>
+  <rect x="418" y="188" width="128" height="6" rx="3" fill="#a6e3a1"/>
+  <circle cx="546" cy="191" r="8" fill="#a6e3a1"/>
+  <text x="585" y="198" font-family="monospace" font-size="12" fill="#cdd6f4">0.80</text>
+
+  <!-- Generate button -->
+  <rect x="310" y="212" width="200" height="38" rx="8" fill="#89b4fa"/>
+  <text x="410" y="236" font-family="monospace" font-size="14" fill="#1e1e2e" text-anchor="middle" font-weight="bold">▶  Generate Code</text>
+
+  <!-- Output section label -->
+  <text x="30" y="278" font-family="monospace" font-size="13" fill="#a6e3a1" font-weight="bold">Generated Code</text>
+
+  <!-- Output box -->
+  <rect x="20" y="286" width="780" height="150" rx="6" fill="#181825" stroke="#45475a" stroke-width="1"/>
+
+  <!-- Code content -->
+  <text x="36" y="310" font-family="monospace" font-size="13" fill="#cba6f7">def</text>
+  <text x="68" y="310" font-family="monospace" font-size="13" fill="#89b4fa">reverse_string</text>
+  <text x="204" y="310" font-family="monospace" font-size="13" fill="#cdd6f4">(</text>
+  <text x="214" y="310" font-family="monospace" font-size="13" fill="#fab387">s</text>
+  <text x="222" y="310" font-family="monospace" font-size="13" fill="#cdd6f4">):</text>
+
+  <text x="52" y="332" font-family="monospace" font-size="13" fill="#cba6f7">return</text>
+  <text x="100" y="332" font-family="monospace" font-size="13" fill="#fab387">s</text>
+  <text x="108" y="332" font-family="monospace" font-size="13" fill="#cdd6f4">[::-1]</text>
+
+  <!-- Footer label -->
+  <text x="410" y="450" font-family="monospace" font-size="11" fill="#585b70" text-anchor="middle">CortexDev · Built on Salesforce CodeGen-350M · LoRA Fine-Tuned</text>
+</svg>
